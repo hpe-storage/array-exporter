@@ -1,12 +1,12 @@
 # Overview
 
-HPE Storage Array Exporter for Prometheus is a unified exporter that supports the HPE primary storage portfolio. The [metrics](/metrics/index.html) provided differ by storage system type and release.
+HPE Storage Array Exporter for Prometheus is a unified exporter that supports the HPE primary storage portfolio. The [metrics](../metrics/index.md) provided differ by storage system type and release.
 
 ## Delivery Vehicles
 
 The exporter is delivered as:
 
-- [Standalone binaries]((https://github.com/hpe-storage/array-exporter/releases) for Linux and Windows through GitHub releases.
+- [Standalone binaries](https://github.com/hpe-storage/array-exporter/releases) for Linux and Windows through GitHub releases.
 - [Container images](https://quay.io/repository/hpestorage/array-exporter) hosted on Quay, deployable via standalone Docker or via Kubernetes (with object definitions in [YAML](https://github.com/hpe-storage/co-deployments/tree/master/yaml/array-exporter) available in GitHub).
 - [Helm charts](https://artifacthub.io/packages/helm/hpe-storage/hpe-array-exporter/) hosted at Artifact Hub.
 

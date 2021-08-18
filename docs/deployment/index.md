@@ -43,7 +43,7 @@ CONFIG-PATH is the location of the storage system [configuration](#configuration
 ```
 
 !!! important
-    Include the `--accept-eula` option or set the environment variable `ACCEPT_HPE_STANDARD_EULA=yes` to confirm your acceptance of the [HPE license restrictions](/legal/eula/index.html).
+    Include the `--accept-eula` option or set the environment variable `ACCEPT_HPE_STANDARD_EULA=yes` to confirm your acceptance of the [HPE license restrictions](../legal/eula/index.md).
 
 
 # Using a Container Image
