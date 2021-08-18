@@ -1,0 +1,1 @@
+This software is provided according to [HPE license restrictions](https://www.hpe.com/us/en/software/licensing.html).  The [deployment documentation](/deployment/index.html) describes how to indicate your acceptance of these terms.

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block site_meta %}
+    {{ super() }}
+    {% if page %}<meta property="og:title" content="HPE Storage Array Exporter for Prometheus"/>
+    <meta property="og:description" content="The HPE Storage Array Exporter for Prometheus provides observability for an HPE storage system via the Prometheus metric format."/>{% endif %}
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:url" content="https://hpe-storage.github.io/array-exporter"/>
+    <meta property="og:type" content="website"/>
+    {% endblock %}
+
+{% block footer %}
+
+<footer>
+  {%- block next_prev %}
+  {% if page and page.next_page or page.previous_page %}
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      {% if page.next_page %}
+        <a href="{{ page.next_page.url|url }}" class="btn btn-neutral float-right" title="{{ page.next_page.title }}">Next <span class="icon icon-circle-arrow-right"></span></a>
+      {% endif %}
+      {% if page.previous_page %}
+        <a href="{{ page.previous_page.url|url }}" class="btn btn-neutral" title="{{ page.previous_page.title }}"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      {% endif %}
+    </div>
+  {% endif %}
+  {%- endblock %}
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    {% if config.copyright %}
+      <p>{{ config.copyright }}</p>
+    {% endif %}
+  </div>
+</footer>
+{% endblock %}
