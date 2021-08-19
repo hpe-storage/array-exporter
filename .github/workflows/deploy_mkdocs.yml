@@ -19,5 +19,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.MKDOCS_ACTION_TOKEN }}
           #CUSTOM_DOMAIN: optionaldomain.com
           #CONFIG_FILE: folder/mkdocs.yml
-          EXTRA_PACKAGES: build-base
+          EXTRA_PACKAGES: build-base mkdocs-redirects markdown-fenced-code-tabs
           # GITHUB_DOMAIN: github.myenterprise.com
