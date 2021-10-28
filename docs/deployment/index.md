@@ -12,7 +12,7 @@ username: exampleuser
 password: examplepassword
 ```
 
-The `address` key is either a resolvable hostname or IP address of the managment interface on the storage system. The `username` key correponds to a storage system user with privileges described below.
+The `address` value is either a resolvable hostname or IP address of the management interface on the storage system. The `username` value identifies to a storage system user with privileges described below.
 
 | Storage System                               | User Type   | Minimal Role   |
 | :------------------------------------------- | :---------- | :------------- |
