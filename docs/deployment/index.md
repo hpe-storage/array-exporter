@@ -12,6 +12,16 @@ username: exampleuser
 password: examplepassword
 ```
 
+The `address` key is either a resolvable hostname or IP address of the managment interface on the storage system. The `username` key correponds to a storage system user with privileges described below.
+
+| Storage System                               | User Type   | Minimal Role   |
+| :------------------------------------------- | :---------- | :------------- |
+| HPE Alletra 9000, Primera, 3PAR              | System User | Browse         |
+| HPE Alletra 6000, Nimble Storage             | System User | Guest          |
+| HPE Alletra 6000, Nimble Storage<sup>1</sup> | Tenant      | N/A            |
+
+<sup>1</sup> = NimbleOS 6.0 and above only.
+
 # Command Options
 
 | Option | Default | Description |
