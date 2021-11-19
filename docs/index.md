@@ -20,4 +20,4 @@ See the [compatibility chart](releases/index.md) for specific versions and relea
 
 # Support
 
-HPE Storage Array Exporter for Prometheus is supported by HPE when used with HPE storage arrays on valid support contracts. Please send an email to [ps-containervision-core@hpe.com](mailto:ps-containervision-core@hpe.com) to get started with any issue that requires assistance. Engage your HPE representative for other means to contact HPE Storage support directly.
+HPE Storage Array Exporter for Prometheus is supported by HPE when used with HPE storage arrays on valid support contracts. Please send an email to [ps-containervision-core@hpe.com](mailto:ps-containervision-core@hpe.com) to get started with any issue that requires assistance. Engage your HPE representative for other means to contact HPE Storage directly.
