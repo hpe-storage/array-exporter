@@ -34,7 +34,7 @@ The `address` value is either a resolvable hostname or IP address of the managem
 
 # Using an Executable File
 
-Linux and Windows executable files are provided through GitHub [releases](https://github.com/hpe-storage/array-exporter/releases).
+A Linux executable file is provided through GitHub [releases](https://github.com/hpe-storage/array-exporter/releases).
 
 When an executable file has been copied to your server, it can be invoked with this command syntax:
 
