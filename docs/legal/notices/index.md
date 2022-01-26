@@ -1,0 +1,3 @@
+```markdown
+{% include 'NOTICES.txt' %}
+```

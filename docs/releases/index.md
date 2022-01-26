@@ -6,27 +6,27 @@ HPE Storage Array Exporter for Prometheus is a unified exporter that supports th
 
 The exporter is delivered as:
 
-- [Standalone binaries](https://github.com/hpe-storage/array-exporter/releases) for Linux and Windows through GitHub releases.
+- [Standalone binaries](https://github.com/hpe-storage/array-exporter/releases) for Linux through GitHub releases.
 - [Container images](https://quay.io/repository/hpestorage/array-exporter) hosted on Quay, deployable via standalone Docker or via Kubernetes (with object definitions in [YAML](https://github.com/hpe-storage/co-deployments/tree/master/yaml/array-exporter) available in GitHub).
 - [Helm charts](https://artifacthub.io/packages/helm/hpe-storage/hpe-array-exporter/) hosted at Artifact Hub.
 
-### HPE Storage Array Exporter for Prometheus 1.0.0-beta
+### HPE Storage Array Exporter for Prometheus 1.0.0
 
 Release highlights:
 
-- Initial beta and early access
+- Initial version
 
 <table>
  <tr>
    <th>Binaries and Release Notes</th>
    <td>
-    <a href="https://github.com/hpe-storage/array-exporter/releases/tag/v1.0.0-beta">1.0.0-beta</a> on GitHub
+    <a href="https://github.com/hpe-storage/array-exporter/releases/tag/v1.0.0">1.0.0</a> on GitHub
    </td>
  </tr>
  <tr>
    <th>Helm Chart</th>
    <td>
-    <a href="https://artifacthub.io/packages/helm/hpe-storage/hpe-array-exporter/1.0.0-beta">1.0.0-beta</a> on Artifact Hub
+    <a href="https://artifacthub.io/packages/helm/hpe-storage/hpe-array-exporter/1.0.0">1.0.0</a> on Artifact Hub
    </td>
  </tr>
  <tr>

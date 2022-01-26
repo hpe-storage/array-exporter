@@ -20,6 +20,10 @@ markdown_extensions:
       single_block_as_tab: False
       active_class: 'active'
       template: 'default'
+plugins:
+  - search:
+  - macros:
+      include_dir: '.'
 nav:
   - GET STARTED:
     - 'Releases': releases/index.md
@@ -33,4 +37,5 @@ nav:
     - 'Got feedback?': 'https://github.com/hpe-storage/array-exporter/issues/new?title=I have some feedback on the Array Exporter'
   - LEGAL:
     - 'End User License Agreement': 'legal/eula/index.md'
+    - 'Notices': 'legal/notices/index.md'
     - 'Support': 'legal/support/index.md'
