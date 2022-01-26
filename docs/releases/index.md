@@ -42,8 +42,8 @@ Release highlights:
  <tr>
    <th>Blogs</th>
    <td>
-    Release blog on <a href="https://community.hpe.com/t5/Around-the-Storage-Block/HPE-CSI-Driver-for-Kubernetes-enhancements-with-monitoring-and/ba-p/7158137">Around The Storage Block</a><br />
-    Tutorial using Docker on <a href="https://developer.hpe.com/blog/get-started-with-prometheus-and-grafana-on-docker-with-hpe-storage-array-exporter/">HPE Developer Community</a>
+    <a href="https://community.hpe.com/t5/Around-the-Storage-Block/HPE-CSI-Driver-for-Kubernetes-enhancements-with-monitoring-and/ba-p/7158137">Release blog</a> on Around The Storage Block<br />
+    <a href="https://developer.hpe.com/blog/get-started-with-prometheus-and-grafana-on-docker-with-hpe-storage-array-exporter/">Tutorial using Docker</a> on HPE Developer Community
    </td>
  </tr>
 </table>
