@@ -7,7 +7,7 @@ theme:
   custom_dir: hpe_theme/
 repo_name: 'hpe-storage/array-exporter'
 repo_url: 'https://github.com/hpe-storage/array-exporter'
-copyright: "Copyright 2021 Hewlett Packard Enterprise Development LP"
+copyright: "Copyright 2023 Hewlett Packard Enterprise Development LP"
 extra_css:
   - css/hpedev.css
 use_directory_urls: false
@@ -33,7 +33,7 @@ nav:
     - 'Grafana Dashboards': grafana/index.md
   - COMMUNITY:
     - 'HPE Developer Community': 'https://developer.hpe.com'
-    - 'Sign up to HPE DEV on Slack': 'https://slack.hpedev.io'
+    - 'Sign up to HPE Developer on Slack': 'https://slack.hpedev.io'
     - 'Got feedback?': 'https://github.com/hpe-storage/array-exporter/issues/new?title=I have some feedback on the Array Exporter'
   - LEGAL:
     - 'End User License Agreement': 'legal/eula/index.md'

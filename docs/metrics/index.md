@@ -59,9 +59,12 @@ Each of these metrics includes the following labels.
 | cpg | Name of the CPG containing the volume |
 | volume | Volume name |
 
-## HPE Alletra 6000 and Nimble
+## HPE Alletra 5000/6000 and Nimble
 
-The metrics provided for HPE Alletra 6000 and Nimble Storage systems are equivalent, with the metric names reflecting the storage system type.
+The metrics provided for HPE Alletra 5000/6000 and Nimble Storage systems are equivalent, with the metric names reflecting the storage system type.
+
+!!! note
+    HPE Alletra 5000 metrics will appear as "hpealletra6000".
 
 ### Storage Pool Space
 
