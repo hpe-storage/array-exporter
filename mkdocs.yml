@@ -22,8 +22,8 @@ markdown_extensions:
       template: 'default'
 plugins:
   - search:
+  - include-markdown:
   - macros:
-      include_dir: '.'
 nav:
   - GET STARTED:
     - 'Releases': releases/index.md
