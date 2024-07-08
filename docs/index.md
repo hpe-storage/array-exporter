@@ -10,6 +10,7 @@ This documentation shows how to [deploy](deployment/index.md) the exporter, the 
 
 HPE Storage Array Exporter for Prometheus is compatible with these storage arrays:
 
+* HPE Alletra Storage MP Block
 * HPE Alletra 9000
 * HPE Alletra 5000/6000
 * HPE Nimble Storage

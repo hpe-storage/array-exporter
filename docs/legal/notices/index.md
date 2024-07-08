@@ -1,3 +1,3 @@
 ```markdown
-{% include 'NOTICES.txt' %}
+{% include '../../../NOTICES.txt' %}
 ```

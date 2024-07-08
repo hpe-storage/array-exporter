@@ -10,6 +10,38 @@ The exporter is delivered as:
 - [Container images](https://quay.io/repository/hpestorage/array-exporter) hosted on Quay, deployable via standalone Docker or via Kubernetes (with object definitions in [YAML](https://github.com/hpe-storage/co-deployments/tree/master/yaml/array-exporter) available in GitHub).
 - [Helm charts](https://artifacthub.io/packages/helm/hpe-storage/hpe-array-exporter/) hosted at Artifact Hub.
 
+### HPE Storage Array Exporter for Prometheus 1.0.3
+
+Release highlights:
+
+- Support for HPE Alletra Storage MP Block
+
+<table>
+ <tr>
+   <th>Binaries and Release Notes</th>
+   <td>
+    <a href="https://github.com/hpe-storage/array-exporter/releases/tag/v1.0.3">1.0.3</a> on GitHub
+   </td>
+ </tr>
+ <tr>
+   <th>Helm Chart</th>
+   <td>
+    <a href="https://artifacthub.io/packages/helm/hpe-storage/hpe-array-exporter/1.0.3">1.0.3</a> on Artifact Hub
+   </td>
+ </tr>
+ <tr>
+   <th>Platforms</th>
+   <td>
+     Alletra Storage MP OS 10.0.0 or later<br />
+     Alletra OS 9000 9.3.0 or later<br />
+     Alletra OS 5000/6000 6.0.0 or later<br />
+     Nimble OS 5.0.10 or later<br />
+     Primera OS 4.0.0 or later<br />
+     3PAR OS 3.3.1 or later
+   </td>
+ </tr>
+</table>
+
 ### HPE Storage Array Exporter for Prometheus 1.0.2
 
 Release highlights:
