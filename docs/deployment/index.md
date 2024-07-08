@@ -14,11 +14,11 @@ password: examplepassword
 
 The `address` value is either a resolvable hostname or IP address of the management interface on the storage system. The `username` value identifies a storage system user with privileges described below.
 
-| Storage System                                    | User Type   | Minimal Role   | Open Ports Requirements |
-| :------------------------------------------------ | :---------- | :------------- | :---------------------- |
-| HPE Alletra 9000, Primera, 3PAR                   | System User | Browse         | 22, 443                 |
-| HPE Alletra 5000/6000, Nimble Storage             | System User | Guest          | 5392                    |
-| HPE Alletra 5000/6000, Nimble Storage<sup>1</sup> | Tenant      | N/A            | 443, 5392               |
+| Storage System                                            | User Type   | Minimal Role   | Open Ports Requirements |
+| :-------------------------------------------------------- | :---------- | :------------- | :---------------------- |
+| HPE Alletra Storage MP Block, Alletra 9000, Primera, 3PAR | System User | Browse         | 22, 443                 |
+| HPE Alletra 5000/6000, Nimble Storage                     | System User | Guest          | 5392                    |
+| HPE Alletra 5000/6000, Nimble Storage<sup>1</sup>         | Tenant      | N/A            | 443, 5392               |
 
 <sup>1</sup> = NimbleOS 6.0 and above only.
 
@@ -58,7 +58,7 @@ CONFIG-PATH is the location of the storage system [configuration](#configuration
 
 # Using a Container Image
 
-A container image is hosted at `quay.io/hpestorage/array-exporter:v1.0.2`, with v1.0.2 replaced by the desired release version.
+A container image is hosted at `quay.io/hpestorage/array-exporter:v1.0.3`, with v1.0.3 replaced by the desired release version.
 
 When deploying the array exporter as a container, the configuration file must be mounted as a volume.
 
@@ -71,7 +71,7 @@ In this example, the configuration file at `/tmp/storage-system.yaml` is bound t
 ```markdown
 docker run -it --name hpe-array-exporter -p 9090:8080 \
      -v /tmp/storage-system.yaml:/etc/config/storage-system.yaml \
-     quay.io/hpestorage/array-exporter:v1.0.2 \
+     quay.io/hpestorage/array-exporter:v1.0.3 \
      --log.path /var/log/hpe-array-exporter.log \
      /etc/config/storage-system.yaml
 ```

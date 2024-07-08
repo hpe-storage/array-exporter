@@ -33,7 +33,7 @@ nav:
     - 'Grafana Dashboards': grafana/index.md
   - COMMUNITY:
     - 'HPE Developer Community': 'https://developer.hpe.com'
-    - 'Sign up to HPE Developer on Slack': 'https://slack.hpedev.io'
+    - 'Sign up to HPE Developer on Slack': 'https://developer.hpe.com/slack-signup/'
     - 'Got feedback?': 'https://github.com/hpe-storage/array-exporter/issues/new?title=I have some feedback on the Array Exporter'
   - LEGAL:
     - 'End User License Agreement': 'legal/eula/index.md'
