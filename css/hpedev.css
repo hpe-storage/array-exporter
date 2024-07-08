@@ -1,0 +1,155 @@
+.wy-side-nav-search, .wy-nav-top {
+    background: #477083;
+}
+.wy-nav-side {
+    width: 300px;
+    background: #425563;
+}
+
+.wy-menu-vertical a:hover {
+    background-color: #00b388;
+    color: #fff;
+}
+
+.wy-menu-vertical span {
+    font-weight: bold;
+    font-size: 105%;
+    color: #ddd;
+}
+
+.wy-menu-vertical a {
+    line-height: 100%;
+    padding-left: 2.6em;
+    color: #b3b3b3;
+}
+
+.wy-menu-vertical header, .wy-menu-vertical p.caption {
+	height: 16px;
+	line-height: 16px;
+}
+
+/* blue */
+.rst-content .note {
+    background: #DBF4FF;
+}
+.rst-content .note .admonition-title {
+    background-color: #67B2D5;
+}
+.rst-content .seealso {
+    background: #DBF4FF;
+}
+.rst-content .seealso .admonition-title {
+    background-color: #67B2D5;
+}
+
+/* green */
+.rst-content .tip {
+    background: #DAFFFD;
+}
+.rst-content .tip .admonition-title {
+    background-color: #00B6AE;
+}
+.rst-content .important {
+    background: #DAFFFD;
+}
+.rst-content .important .admonition-title {
+    background-color: #00B6AE;
+}
+.rst-content .hint {
+    background: #DAFFFD;
+}
+.rst-content .hint .admonition-title {
+    background-color: #00B6AE;
+}
+
+/* orange */
+.rst-content .warning {
+    background: #FFE3D7;
+}
+.rst-content .warning .admonition-title {
+    background-color: #FF9161;
+}
+.rst-content .caution {
+    background: #FFE3D7;
+}
+.rst-content .caution .admonition-title {
+    background-color: #FF9161;
+}
+
+/* red */
+.rst-content .danger {
+    background: #E9E2F0;
+}
+.rst-content .danger .admonition-title {
+    background-color: #A250F0;
+}
+.rst-content .error {
+    background: #E9E2F0;
+}
+.rst-content .error .admonition-title {
+    background-color: #A250F0;
+}
+
+/* tabbed code fences */
+.md-fenced-code-tabs * {
+    box-sizing: border-box;
+}
+
+.md-fenced-code-tabs {
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #eee;
+    margin-bottom: 25px;
+}
+
+.md-fenced-code-tabs input {
+    position: absolute;
+    opacity: 0;
+}
+
+.md-fenced-code-tabs label {
+    width: auto;
+    padding: 0 4px;
+    margin: 0 8px;
+    cursor: pointer;
+    color: #2980b9;
+    margin-top: 10px;
+}
+
+.md-fenced-code-tabs input:checked + label {
+    color: #333;
+    font-weight: bold;
+}
+
+.md-fenced-code-tabs .code-tabpanel {
+    display: none;
+    width: 100%;
+    margin-top: 10px;
+    order: 99;
+}
+
+.md-fenced-code-tabs input:checked + label + .code-tabpanel {
+    display: block;
+}
+
+.md-fenced-code-tabs pre,
+.md-fenced-code-tabs .codehilite {
+    width: 100%;
+    margin: 0px;
+}
+
+.rst-versions {
+  width: 310px;
+}
+
+.rst-content .section ol li > ol, .rst-content .section ol li > ul, .rst-content .section ul li > ol, .rst-content .section ul li > ul, .rst-content .toctree-wrapper ol li > ol, .rst-content .toctree-wrapper ol li > ul, .rst-content .toctree-wrapper ul li > ol, .rst-content .toctree-wrapper ul li > ul, .rst-content section ol li > ol, .rst-content section ol li > ul, .rst-content section ul li > ol, .rst-content section ul li > ul, .rst-content .section ol li > *, .rst-content .section ul li > *, .rst-content .toctree-wrapper ol li > *, .rst-content .toctree-wrapper ul li > *, .rst-content section ol li > *, .rst-content section ul li > * {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.wy-table-responsive table td, .wy-table-responsive table th {
+	white-space: normal;
+}

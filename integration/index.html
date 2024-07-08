@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Hewlett Packard Enterprise" /><link rel="canonical" href="https://hpe-storage.github.io/array-exporter/integration/index.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <meta property="og:title" content="HPE Storage Array Exporter for Prometheus"/>
+    <meta property="og:description" content="The HPE Storage Array Exporter for Prometheus provides observability for an HPE storage system via the Prometheus metric format."/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:url" content="https://hpe-storage.github.io/array-exporter"/>
+    <meta property="og:type" content="website"/>
+    
+    <title>Prometheus Integration - HPE Storage Array Exporter for Prometheus</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../css/hpedev.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Prometheus Integration";
+        var mkdocs_page_input_path = "integration/index.md";
+        var mkdocs_page_url = "/array-exporter/integration/index.html";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> HPE Storage Array Exporter for Prometheus
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">GET STARTED</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../releases/index.html">Releases</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../deployment/index.html">Deployment</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../metrics/index.html">Metrics</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="index.html">Prometheus Integration</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#prometheus_standalone">Prometheus Standalone</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#using_a_prometheus_configuration_file">Using a Prometheus Configuration File</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#prometheus_running_on_kubernetes">Prometheus running on Kubernetes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#using_a_kubernetes_service_with_prometheus_helm_annotations">Using a Kubernetes Service with Prometheus Helm Annotations</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#using_a_kubernetes_service_monitor">Using a Kubernetes Service Monitor</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#servicemonitor_example">ServiceMonitor Example</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../grafana/index.html">Grafana Dashboards</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">COMMUNITY</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="https://developer.hpe.com">HPE Developer Community</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://developer.hpe.com/slack-signup/">Sign up to HPE Developer on Slack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://github.com/hpe-storage/array-exporter/issues/new?title=I have some feedback on the Array Exporter">Got feedback?</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">LEGAL</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../legal/eula/index.html">End User License Agreement</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../legal/notices/index.html">Notices</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../legal/support/index.html">Support</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">HPE Storage Array Exporter for Prometheus</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>GET STARTED &raquo;</li>
+      <li>Prometheus Integration</li>
+    <li class="wy-breadcrumbs-aside">
+        <a href="https://github.com/hpe-storage/array-exporter/edit/master/docs/integration/index.md"> Edit on hpe-storage/array-exporter</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h1>
+<p>When an HPE Storage Array Exporter for Prometheus has been deployed, a Prometheus instance can be configured to collect metrics from it. The configuration requirements depend on multiple factors, including the ways Prometheus and the exporter are deployed and the desired monitoring practices. The examples provided here are intended to facilitate setup of the exporter as a scrape target in select scenarios.  Refer to Prometheus documentation for more complete guidance.</p>
+<div class="toc">
+<ul>
+<li><a href="#overview">Overview</a><ul>
+<li><a href="#prometheus_standalone">Prometheus Standalone</a><ul>
+<li><a href="#using_a_prometheus_configuration_file">Using a Prometheus Configuration File</a></li>
+</ul>
+</li>
+<li><a href="#prometheus_running_on_kubernetes">Prometheus running on Kubernetes</a><ul>
+<li><a href="#using_a_kubernetes_service_with_prometheus_helm_annotations">Using a Kubernetes Service with Prometheus Helm Annotations</a></li>
+<li><a href="#using_a_kubernetes_service_monitor">Using a Kubernetes Service Monitor</a><ul>
+<li><a href="#servicemonitor_example">ServiceMonitor Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If the intention is to use the HPE provided Grafana dashboards, a label named "array" in scrape targets with the storage system designation (i.e. a hostname) is mandatory for the dashboards to work.</p>
+</div>
+<h2 id="prometheus_standalone">Prometheus Standalone<a class="headerlink" href="#prometheus_standalone" title="Permanent link">&para;</a></h2>
+<p>It's most common to have scrape targets statically defined in a Prometheus configuration file when running Prometheus as a standalone application.</p>
+<h3 id="using_a_prometheus_configuration_file">Using a Prometheus Configuration File<a class="headerlink" href="#using_a_prometheus_configuration_file" title="Permanent link">&para;</a></h3>
+<p>When running Prometheus as either a standalone executable or a container, a <a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/">configuration file</a> (conventionally named prometheus.yml) is used. In it, a scrape job can be added for the exporter with configuration content similar to the following example.</p>
+<p> <pre><code class=markdown>scrape_configs:
+  - job_name: 'hpe-array-exporter'
+    # A scrape interval of 30 seconds or more is recommended
+    scrape_interval: 1m
+    static_configs:
+      # Set the target to the host address and port at which the exporter serves its metrics
+      - targets: ['localhost:8080']
+        labels: 
+          # Specify any labels to be added to the resulting metrics
+</code></pre></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It may be desirable to include a label to identify the storage system from which the metrics are collected.</p>
+</div>
+<h2 id="prometheus_running_on_kubernetes">Prometheus running on Kubernetes<a class="headerlink" href="#prometheus_running_on_kubernetes" title="Permanent link">&para;</a></h2>
+<p>When running Prometheus on Kubernetes, scrape targets may be dynamically discovered. Different methods are used when Prometheus is deployed via a Helm chart or an Operator.</p>
+<h3 id="using_a_kubernetes_service_with_prometheus_helm_annotations">Using a Kubernetes Service with Prometheus Helm Annotations<a class="headerlink" href="#using_a_kubernetes_service_with_prometheus_helm_annotations" title="Permanent link">&para;</a></h3>
+<p>This example applies when the <a href="https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus">Prometheus Helm chart</a> and the exporter are deployed in the same Kubernetes cluster.</p>
+<p>The Prometheus Helm chart uses a configuration file like the one described in the preceding section.  Its <a href="https://github.com/prometheus-community/helm-charts/blob/main/charts/prometheus/values.yaml">default configuration</a> enables Pods and Services to be identified as scrape targets using annotations such as <code>prometheus.io/scrape: "true"</code> and <code>prometheus.io/scrape-slow: "true"</code>.  Annotations like these can be added to the exporter Service when created with either the <a href="https://github.com/hpe-storage/co-deployments/tree/master/yaml/array-exporter">sample YAML files</a> or the <a href="https://artifacthub.io/packages/helm/hpe-storage/hpe-array-exporter">Helm chart</a>.</p>
+<h3 id="using_a_kubernetes_service_monitor">Using a Kubernetes Service Monitor<a class="headerlink" href="#using_a_kubernetes_service_monitor" title="Permanent link">&para;</a></h3>
+<p>This example applies when the Prometheus Operator and the exporter are deployed in the same Kubernetes cluster.</p>
+<p>The <a href="https://github.com/prometheus-operator/prometheus-operator">Prometheus Operator</a> and the <a href="https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack">Helm Kube Prometheus Stack</a> can discover scrape targets via <code>Service</code> and <code>ServiceMonitor</code> objects.</p>
+<p>A Kubernetes <a href="https://kubernetes.io/docs/concepts/services-networking/service/">Service</a> is created along with a Deployment when using either the <a href="https://github.com/hpe-storage/co-deployments/tree/master/yaml/array-exporter">sample YAML files</a> or the <a href="https://artifacthub.io/packages/helm/hpe-storage/hpe-array-exporter">Helm chart</a>. By default it is a <code>ClusterIP</code> Service for access from within the cluster.  A <code>NodePort</code> Service can be configured instead to provide access from outside the cluster, for example in conjunction with a Prometheus configuration file as described above.</p>
+<p>A ServiceMonitor enables a <code>Prometheus</code> custom resource (defined by the Prometheus Operator) to discover the exporter Service as a scrape target. Whether the Prometheus instance is created automatically (such as by a Helm chart installation) or manually, its <code>serviceMonitorNamespaceSelector</code> and <code>serviceMonitorSelector</code> fields control which ServiceMonitor objects it discovers.</p>
+<p>The ServiceMonitor's <code>namespaceSelector</code> and <code>selector</code> fields in turn control how an exporter Service is identified.  In the following example, the <code>selector</code> identifies the exporter Service based on a matching <code>app</code> label.</p>
+<h4 id="servicemonitor_example">ServiceMonitor Example<a class="headerlink" href="#servicemonitor_example" title="Permanent link">&para;</a></h4>
+<p> <pre><code class=markdown>kind: ServiceMonitor
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: hpe-array-exporter-servicemonitor
+  namespace: hpe-storage
+  labels:
+    # A selector for this label is used by a Prometheus Operator,
+    # installed via OLM
+    k8s-app: prometheus
+    # A &quot;release&quot; label selector is used by the Helm Kube Prometheus Stack,
+    # with the value as the release specified on chart installation
+    release: prometheus
+spec:
+  # Match the namespace of the target Array Exporter service,
+  # or omit the namespaceSelector
+  namespaceSelector:
+    matchNames:
+      - hpe-storage
+  selector:
+    matchLabels:
+      app: hpe-array-exporter
+  endpoints:
+    - port: http-metrics
+      scheme: http
+      interval: 1m
+  # Corresponding labels on the Array Exporter service are added to
+  # the scraped metrics; customize as desired
+  targetLabels:
+    - array
+</code></pre></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It may be desirable for metrics from the exporter to include a label identifying the storage system from which they are collected.  In this example, the <code>targetLabels</code> configuration refers to an <code>array</code> label that must have been included in the Service object.</p>
+</div>
+<p>A ServiceMonitor example can also be found in the <a href="https://github.com/hpe-storage/co-deployments/tree/master/yaml/array-exporter">sample YAML files</a>.</p>
+              
+            </div>
+          </div>
+
+<footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../grafana/index.html" class="btn btn-neutral float-right" title="Grafana Dashboards">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../metrics/index.html" class="btn btn-neutral" title="Metrics"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright 2023 Hewlett Packard Enterprise Development LP</p>
+    
+  </div>
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../metrics/index.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../grafana/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
