@@ -4,19 +4,22 @@ The metrics provided by the HPE Storage Array Exporter for Prometheus vary accor
 
 [TOC]
 
-## HPE Alletra 9000 and Primera
+## Alletra Storage MP B10000, Alletra 9000, Primera and 3PAR
 
-The metrics provided for HPE Alletra 9000 and Primera storage systems (3PAR is also supported) are equivalent, with the metric names reflecting the storage system type.
+The metrics provided for 3PAR derived systems are equivalent, with the metric names reflecting the storage system type.
+
+!!! error "Recommendation"
+    For HPE Alletra Storage MP B10000 it's recommended to use the [onboard exporter](../onboard/index.md).
 
 ### Common Provisioning Group (CPG) Space
 
 | Metric | Type | Description |
 | :--- | :--- | :--- |
-| hpealletra9000_cpg_capacity_bytes<br/>hpeprimera_cpg_capacity_bytes<br/>hpe3par_cpg_capacity_bytes | Gauge | Total capacity allocated to a CPG |
-| hpealletra9000_cpg_used_bytes<br/>hpeprimera_cpg_used_bytes<br/>hpe3par_cpg_used_bytes | Gauge | CPG capacity in use |
-| hpealletra9000_cpg_available_bytes<br/>hpeprimera_cpg_available_bytes<br/>hpe3par_cpg_available_bytes | Gauge | CPG capacity available |
-| hpealletra9000_cpg_volume_used_bytes<br/>hpeprimera_cpg_volume_used_bytes<br/>hpe3par_cpg_volume_used_bytes | Gauge | CPG capacity reserved for volumes |
-| hpealletra9000_cpg_snapshot_used_bytes<br/>hpeprimera_cpg_snapshot_used_bytes<br/>hpe3par_cpg_snapshot_used_bytes | Gauge | CPG capacity reserved for snapshots |
+| hpealletrastoragemp_cpg_capacity_bytes<br/>hpealletra9000_cpg_capacity_bytes<br/>hpeprimera_cpg_capacity_bytes<br/>hpe3par_cpg_capacity_bytes | Gauge | Total capacity allocated to a CPG |
+| hpealletrastoragemp_cpg_used_bytes<br/>hpealletra9000_cpg_used_bytes<br/>hpeprimera_cpg_used_bytes<br/>hpe3par_cpg_used_bytes | Gauge | CPG capacity in use |
+| hpealletrastoragemp_cpg_available_bytes<br/>hpealletra9000_cpg_available_bytes<br/>hpeprimera_cpg_available_bytes<br/>hpe3par_cpg_available_bytes | Gauge | CPG capacity available |
+| hpealletrastoragemp_cpg_volume_used_bytes<br/>hpealletra9000_cpg_volume_used_bytes<br/>hpeprimera_cpg_volume_used_bytes<br/>hpe3par_cpg_volume_used_bytes | Gauge | CPG capacity reserved for volumes |
+| hpealletrastoragemp_cpg_snapshot_used_bytes<br/>hpealletra9000_cpg_snapshot_used_bytes<br/>hpeprimera_cpg_snapshot_used_bytes<br/>hpe3par_cpg_snapshot_used_bytes | Gauge | CPG capacity reserved for snapshots |
 
 Each of these metrics includes the following label.
 
@@ -28,9 +31,10 @@ Each of these metrics includes the following label.
 
 | Metric | Type | Labels | Description |
 | :--- | :--- | :--- | :--- |
-| hpealletra9000_volume_size_bytes<br/>hpeprimera_volume_size_bytes<br/>hpe3par_volume_size_bytes | Gauge | cpg, provisioning, volume | Volume data capacity |
+| hpealletrastoragemp_volume_size_bytes<br/>hpealletra9000_volume_size_bytes<br/>hpeprimera_volume_size_bytes<br/>hpe3par_volume_size_bytes | Gauge | cpg, provisioning, volume | Volume data capacity |
 | hpealletra9000_volume_used_bytes<br/>hpeprimera_volume_used_bytes<br/>hpe3par_volume_used_bytes | Gauge | cpg, provisioning, volume | Space used for volume data, including reserved space for a fully-provisioned volume |
 | hpealletra9000_volume_snapshot_used_bytes<br/>hpeprimera_volume_snapshot_used_bytes<br/>hpe3par_volume_snapshot_used_bytes | Gauge | cpg, provisioning, snap_cpg, volume | Space used for volume snapshots |
+| hpealletrastoragemp_volume_total_used_bytes | Gauge | cpg, provisioning, snap_cpg, volume | Space used for both user data and volume snapshots |
 
 The labels have the following meanings.
 
@@ -45,12 +49,12 @@ The labels have the following meanings.
 
 | Metric | Type | Description |
 | :--- | :--- | :--- |
-| hpealletra9000_volume_reads_per_second_avg5m<br/>hpeprimera_volume_reads_per_second_avg5m<br/>hpep3par_volume_reads_per_second_avg5m | Gauge | Read operations performed on the VLUNs for a volume per second, averaged over a fixed five-minute interval (read IOPS) |
-| hpealletra9000_volume_writes_per_second_avg5m<br/>hpeprimera_volume_writes_per_second_avg5m<br/>hpe3par_volume_writes_per_second_avg5m | Gauge | Write operations performed on the VLUNs for a volume per second, averaged over a fixed five-minute interval (write IOPS) |
-| hpealletra9000_volume_read_bytes_per_second_avg5m<br/>hpeprimera_volume_read_bytes_per_second_avg5m<br/>hpe3par_volume_read_bytes_per_second_avg5m | Gauge | Bytes read from the VLUNs for a volume per second, averaged over a fixed five-minute interval (read throughput) |
-| hpealletra9000_volume_write_bytes_per_second_avg5m<br/>hpeprimera_volume_write_bytes_per_second_avg5m<br/>hpe3par_volume_write_bytes_per_second_avg5m | Gauge | Bytes written to the VLUNs for a volume per second, averaged over a fixed five-minute interval (write throughput) |
-| hpealletra9000_volume_seconds_per_read_avg5m<br/>hpeprimera_volume_seconds_per_read_avg5m<br/>hpe3par_volume_seconds_per_read_avg5m | Gauge | Seconds elapsed during a single read from the VLUNs for a volume, averaged over a fixed five-minute interval (read latency) |
-| hpealletra9000_volume_seconds_per_write_avg5m<br/>hpeprimera_volume_seconds_per_write_avg5m<br/>hpe3par_volume_seconds_per_write_avg5m | Gauge | Seconds elapsed during a single write to the VLUNs for a volume, averaged over a fixed five-minute interval (write latency) |
+| hpealletrastoragemp_volume_reads_per_second_avg5m<br/>hpealletra9000_volume_reads_per_second_avg5m<br/>hpeprimera_volume_reads_per_second_avg5m<br/>hpep3par_volume_reads_per_second_avg5m | Gauge | Read operations performed on the VLUNs for a volume per second, averaged over a fixed five-minute interval (read IOPS) |
+| hpealletrastoragemp_volume_writes_per_second_avg5m<br/>hpealletra9000_volume_writes_per_second_avg5m<br/>hpeprimera_volume_writes_per_second_avg5m<br/>hpe3par_volume_writes_per_second_avg5m | Gauge | Write operations performed on the VLUNs for a volume per second, averaged over a fixed five-minute interval (write IOPS) |
+| hpealletrastoragemp_volume_read_bytes_per_second_avg5m<br/>hpealletra9000_volume_read_bytes_per_second_avg5m<br/>hpeprimera_volume_read_bytes_per_second_avg5m<br/>hpe3par_volume_read_bytes_per_second_avg5m | Gauge | Bytes read from the VLUNs for a volume per second, averaged over a fixed five-minute interval (read throughput) |
+| hpealletrastoragemp_volume_write_bytes_per_second_avg5m<br/>hpealletra9000_volume_write_bytes_per_second_avg5m<br/>hpeprimera_volume_write_bytes_per_second_avg5m<br/>hpe3par_volume_write_bytes_per_second_avg5m | Gauge | Bytes written to the VLUNs for a volume per second, averaged over a fixed five-minute interval (write throughput) |
+| hpealletrastoragemp_volume_seconds_per_read_avg5m<br/>hpealletra9000_volume_seconds_per_read_avg5m<br/>hpeprimera_volume_seconds_per_read_avg5m<br/>hpe3par_volume_seconds_per_read_avg5m | Gauge | Seconds elapsed during a single read from the VLUNs for a volume, averaged over a fixed five-minute interval (read latency) |
+| hpealletrastoragemp_volume_seconds_per_write_avg5m<br/>hpealletra9000_volume_seconds_per_write_avg5m<br/>hpeprimera_volume_seconds_per_write_avg5m<br/>hpe3par_volume_seconds_per_write_avg5m | Gauge | Seconds elapsed during a single write to the VLUNs for a volume, averaged over a fixed five-minute interval (write latency) |
 
 Each of these metrics includes the following labels.
 
@@ -59,12 +63,12 @@ Each of these metrics includes the following labels.
 | cpg | Name of the CPG containing the volume |
 | volume | Volume name |
 
-## HPE Alletra 5000/6000 and Nimble
+## Alletra 5000/6000 and Nimble Storage
 
-The metrics provided for HPE Alletra 5000/6000 and Nimble Storage systems are equivalent, with the metric names reflecting the storage system type.
+The metrics provided for Alletra 5000/6000 and Nimble Storage systems are equivalent, with the metric names reflecting the storage system type.
 
 !!! note
-    HPE Alletra 5000 metrics will appear as "hpealletra6000".
+    Alletra 5000 metrics will appear as "hpealletra6000".
 
 ### Storage Pool Space
 

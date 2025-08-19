@@ -15,7 +15,7 @@ It's most common to have scrape targets statically defined in a Prometheus confi
 
 When running Prometheus as either a standalone executable or a container, a [configuration file](https://prometheus.io/docs/prometheus/latest/configuration/configuration/) (conventionally named prometheus.yml) is used. In it, a scrape job can be added for the exporter with configuration content similar to the following example.
 
-```markdown
+```yaml
 scrape_configs:
   - job_name: 'hpe-array-exporter'
     # A scrape interval of 30 seconds or more is recommended
@@ -54,7 +54,7 @@ The ServiceMonitor's `namespaceSelector` and `selector` fields in turn control h
 
 #### ServiceMonitor Example
 
-```markdown
+```yaml
 kind: ServiceMonitor
 apiVersion: monitoring.coreos.com/v1
 metadata:

@@ -1,5 +1,5 @@
-mkdocs==1.3.1
-mkdocs-redirects==1.2.1
-markdown-fenced-code-tabs==1.0.5
-mkdocs-include-markdown-plugin==4.0.4
-mkdocs-macros-plugin==1.0.4
+mkdocs==1.6.1
+mkdocs-redirects==1.2.2
+markdown-fenced-code-tabs-next==1.1.1
+mkdocs-include-markdown-plugin==7.1.2
+mkdocs-macros-plugin==1.3.7
