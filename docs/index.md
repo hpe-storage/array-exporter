@@ -10,12 +10,16 @@ This documentation shows how to [deploy](deployment/index.md) the exporter, the 
 
 HPE Storage Array Exporter for Prometheus is compatible with these storage arrays:
 
-* HPE Alletra Storage MP Block
+* HPE Alletra Storage MP B10000<sup>1</sup>
 * HPE Alletra 9000
 * HPE Alletra 5000/6000
 * HPE Nimble Storage
 * HPE Primera
 * HPE 3PAR
+
+<small>
+ <sup>1</sup> = The B10000 platform from release 10.4 has its own [onboard exporter](onboard/index.md) and customers are recommended to use that. The external HPE Storage Array Exporter for Prometheus is not guaranteed future compatibility with the B10000 platform.
+</small>
 
 See the [compatibility chart](releases/index.md) for specific versions and releases.
 

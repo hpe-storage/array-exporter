@@ -141,8 +141,8 @@
     margin: 0px;
 }
 
-.rst-versions {
-  width: 310px;
+.fa-code-fork {
+    display: none;
 }
 
 .rst-content .section ol li > ol, .rst-content .section ol li > ul, .rst-content .section ul li > ol, .rst-content .section ul li > ul, .rst-content .toctree-wrapper ol li > ol, .rst-content .toctree-wrapper ol li > ul, .rst-content .toctree-wrapper ul li > ol, .rst-content .toctree-wrapper ul li > ul, .rst-content section ol li > ol, .rst-content section ol li > ul, .rst-content section ul li > ol, .rst-content section ul li > ul, .rst-content .section ol li > *, .rst-content .section ul li > *, .rst-content .toctree-wrapper ol li > *, .rst-content .toctree-wrapper ul li > *, .rst-content section ol li > *, .rst-content section ul li > * {

@@ -10,11 +10,50 @@ The exporter is delivered as:
 - [Container images](https://quay.io/repository/hpestorage/array-exporter) hosted on Quay, deployable via standalone Docker or via Kubernetes (with object definitions in [YAML](https://github.com/hpe-storage/co-deployments/tree/master/yaml/array-exporter) available in GitHub).
 - [Helm charts](https://artifacthub.io/packages/helm/hpe-storage/hpe-array-exporter/) hosted at Artifact Hub.
 
+### HPE Storage Array Exporter for Prometheus 1.0.4
+
+Release highlights:
+
+- Addressed critical CVEs
+- Fixed B10000 volumes reporting zero used bytes
+- Added affinity, tolerations and node selector decorations to the Helm chart
+- Added ability to create metric relabelings with the Helm chart
+
+<table>
+ <tr>
+   <th>Binaries and Release Notes</th>
+   <td>
+    <a href="https://github.com/hpe-storage/array-exporter/releases/tag/v1.0.4">1.0.4</a> on GitHub
+   </td>
+ </tr>
+ <tr>
+   <th>Helm Chart</th>
+   <td>
+    <a href="https://artifacthub.io/packages/helm/hpe-storage/hpe-array-exporter/1.0.4">1.0.4</a> on Artifact Hub
+   </td>
+ </tr>
+ <tr>
+   <th>CPU architecture</th>
+   <td>AMD64, ARM64</td>
+ </tr>
+ <tr>
+   <th>Platforms</th>
+   <td>
+     Alletra Storage MP B10000 OS 10.0.0 or later<br />
+     Alletra OS 9000 9.3.0 or later<br />
+     Alletra OS 5000/6000 6.0.0 or later<br />
+     Nimble OS 5.0.10 or later<br />
+     Primera OS 4.0.0 or later<br />
+     3PAR OS 3.3.1 or later
+   </td>
+ </tr>
+</table>
+
 ### HPE Storage Array Exporter for Prometheus 1.0.3
 
 Release highlights:
 
-- Support for HPE Alletra Storage MP Block
+- Support for HPE Alletra Storage MP B10000
 
 <table>
  <tr>
@@ -30,9 +69,13 @@ Release highlights:
    </td>
  </tr>
  <tr>
+   <th>CPU architecture</th>
+   <td>AMD64, ARM64</td>
+ </tr>
+ <tr>
    <th>Platforms</th>
    <td>
-     Alletra Storage MP OS 10.0.0 or later<br />
+     Alletra Storage MP B10000 OS 10.0.0 or later<br />
      Alletra OS 9000 9.3.0 or later<br />
      Alletra OS 5000/6000 6.0.0 or later<br />
      Nimble OS 5.0.10 or later<br />
@@ -60,6 +103,10 @@ Release highlights:
    <td>
     <a href="https://artifacthub.io/packages/helm/hpe-storage/hpe-array-exporter/1.0.2">1.0.2</a> on Artifact Hub
    </td>
+ </tr>
+ <tr>
+   <th>CPU architecture</th>
+   <td>AMD64, ARM64</td>
  </tr>
  <tr>
    <th>Platforms</th>
@@ -93,6 +140,10 @@ Release highlights:
    </td>
  </tr>
  <tr>
+   <th>CPU architecture</th>
+   <td>AMD64</td>
+ </tr>
+ <tr>
    <th>Platforms</th>
    <td>
      Alletra OS 9000 9.3.0<br />
@@ -122,6 +173,10 @@ Release highlights:
    <td>
     <a href="https://artifacthub.io/packages/helm/hpe-storage/hpe-array-exporter/1.0.0">1.0.0</a> on Artifact Hub
    </td>
+ </tr>
+ <tr>
+   <th>CPU architecture</th>
+   <td>AMD64</td>
  </tr>
  <tr>
    <th>Platforms</th>
