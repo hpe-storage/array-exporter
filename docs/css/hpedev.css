@@ -1,93 +1,249 @@
-.wy-side-nav-search, .wy-nav-top {
-    background: #477083;
+@font-face {
+    font-family: 'HPE Graphik Regular';
+    src: url('https://scod.hpedev.io/css/HPE Graphik-Regular.otf');
 }
+
+@font-face {
+    font-family: 'HPE Graphik Bold';
+    src: url('https://scod.hpedev.io/css/HPE Graphik-Bold.otf');
+}
+
+@font-face {
+    font-family: 'HPE Graphik Semibold';
+    src: url('https://scod.hpedev.io/css/HPE Graphik-Semibold.otf');
+}
+
+@font-face {
+    font-family: 'HPE Graphik Medium';
+    src: url('https://scod.hpedev.io/css/HPE Graphik-Medium.otf');
+}
+
+@font-face {
+    font-family: 'HPE Simple Regular';
+    src: url('https://scod.hpedev.io/css/HPESimple-Regular.otf');
+}
+
+body {
+	font-family: HPE Graphik Regular;
+	font-weight: 400;
+        color: #292D3A; /* HPE primary Midnight */
+	min-height: 100%;
+}
+
+.wy-nav-content {
+	margin: 0;
+	background: #F7F7F7;
+	max-width: 824px;
+}
+
+.toc a, .toc a:hover {
+	font-family: HPE Graphik Regular;
+}
+
+.logo a, .logo a:hover, .logo a:visited {
+	font-family: HPE Graphik Medium;
+	font-weight: normal;
+	color: #fff;
+}
+
+a, a:visited, a:hover {
+        color: #292D3A; /* HPE primary Midnight */
+        text-decoration: none;
+	font-family: HPE Graphik Bold;
+}
+
+/* preformatted and tt */
+.rst-content code, .rst-content tt, code, .rst-content .admonition code {
+	white-space: nowrap;
+	max-width: 100%;
+	background: #E6E8E9;
+	border: 2px solid #E6E8E9;
+	font-size: 100%;
+	padding: 5 5px;
+	font-family: HPE Simple Regular;
+	color: #292D3A;
+	overflow-x: auto;
+}
+
+.rst-content pre code {
+	white-space: pre;
+	word-wrap: normal;
+	display: block;
+	padding: 12px;
+	font-size: 100%;
+	background: #fff;
+}
+
+/* headers */
+.rst-content .toctree-wrapper > p.caption, h1, h2, h3, h4, h5, h6, legend {
+	margin-top: 0;
+	font-family: HPE Graphik Semibold;
+}
+
+/* nav */
+.wy-side-nav-search, .wy-nav-top {
+	background: #000000; /* HPE primary Black */
+}
+
 .wy-nav-side {
     width: 300px;
-    background: #425563;
+    background: #292D3A; /* HPE primary Midnight */
+    color: #ff0000;
+}
+
+.wy-body-for-nav {
+    background: #E6E8E9; /* HPE Cloud */
 }
 
 .wy-menu-vertical a:hover {
-    background-color: #00b388;
-    color: #fff;
+    background-color: #535C66; /* HPE Carbon */
+    color: #FFFFFF;
 }
 
-.wy-menu-vertical span {
-    font-weight: bold;
-    font-size: 105%;
-    color: #ddd;
+.wy-menu-vertical li.current > a, .wy-menu-vertical li.on a {
+	font-weight: normal;
 }
 
 .wy-menu-vertical a {
-    line-height: 100%;
-    padding-left: 2.6em;
-    color: #b3b3b3;
+	line-height: 100%;
+	padding-left: 2.6em;
+	color: #B1B9BE; /* HPE Slate */
+	text-decoration: none;
+	font-family: HPE Graphik Regular;
+}
+
+.wy-menu-vertical li.toctree-l1.current > a {
+	border-bottom: 1px solid #c9c9c9;
+	border-top: 1px solid #c9c9c9;
 }
 
 .wy-menu-vertical header, .wy-menu-vertical p.caption {
 	height: 16px;
 	line-height: 16px;
+        color: #E6E8E9; /* HPE Cloud */
+	font-family: HPE Graphik Medium;
 }
 
-/* blue */
+.wy-menu-vertical li button.toctree-expand {
+	color: #B1B9BE; /* HPE Slate */
+}
+
+.wy-menu-vertical li.toctree-l2 button.toctree-expand {
+    	color: #292D3A; /* HPE primary Midnight */
+}
+
+.wy-menu-vertical li.toctree-l3 button.toctree-expand {
+    	color: #292D3A; /* HPE primary Midnight */
+}
+
+.wy-menu-vertical li.current a, li.toctree-l2.current > a, .wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a, .wy-menu-vertical li.toctree-l3.current > a, .wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a {
+    	color: #292D3A; /* HPE primary Midnight */
+	background: #B1B9BE; /* HPE Slate */
+}
+
+.wy-menu-vertical li.toctree-l2.current > a, .wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a {
+	color: #292D3A; /* HPE primary Midnight */
+        background: #B1B9BE; /* HPE Slate */
+}
+.wy-menu-vertical li.current a:hover, li.toctree-l2.current > a:hover {
+    background: #E6E8E9; /* HPE Slate */
+    color: #292D3A; /* HPE primary Midnight */
+}
+
+a.reference.internal.current {
+	font-family: HPE Graphik Regular;
+	font-weight: normal;
+      	background-color: #F7F7F7; /* HPE Cloud */
+    	color: #292D3A; /* HPE primary Midnight */
+}
+
+a.reference.internal {
+	font-weight: normal;
+}
+
+a.reference.external:hover {
+	font-family: HPE Graphik Medium;
+    	background-color: #292D3A; /* HPE primary Midnight */
+}
+
+/* blue 0070F8 */
 .rst-content .note {
-    background: #DBF4FF;
+    background: #DCE9FF;
 }
 .rst-content .note .admonition-title {
-    background-color: #67B2D5;
+	font-family: HPE Graphik Medium;
+	font-weight: normal;
+	background-color: #0070F8;
 }
 .rst-content .seealso {
-    background: #DBF4FF;
+    background: #DCE9FF;
 }
 .rst-content .seealso .admonition-title {
-    background-color: #67B2D5;
+	font-family: HPE Graphik Medium;
+	font-weight: normal;
+    background-color: #0070F8;
 }
 
-/* green */
+/* green 05CC93 */
 .rst-content .tip {
-    background: #DAFFFD;
+    background: #E2F7EF;
 }
 .rst-content .tip .admonition-title {
-    background-color: #00B6AE;
+	font-family: HPE Graphik Medium;
+	font-weight: normal;
+    background-color: #05CC93;
 }
 .rst-content .important {
-    background: #DAFFFD;
+    background: #E2F7EF;
 }
 .rst-content .important .admonition-title {
-    background-color: #00B6AE;
+	font-family: HPE Graphik Medium;
+	font-weight: normal;
+    background-color: #05CC93;
 }
 .rst-content .hint {
-    background: #DAFFFD;
+    background: #E2F7EF;
 }
 .rst-content .hint .admonition-title {
-    background-color: #00B6AE;
+	font-family: HPE Graphik Medium;
+	font-weight: normal;
+    background-color: #05CC93;
 }
 
-/* orange */
+/* orange DEB146 */
 .rst-content .warning {
-    background: #FFE3D7;
+    background: #FAF3E5;
 }
 .rst-content .warning .admonition-title {
-    background-color: #FF9161;
+	font-family: HPE Graphik Medium;
+	font-weight: normal;
+    background-color: #DEB146;
 }
 .rst-content .caution {
-    background: #FFE3D7;
+    background: #FAF3E5;
 }
 .rst-content .caution .admonition-title {
-    background-color: #FF9161;
+	font-family: HPE Graphik Medium;
+	font-weight: normal;
+    background-color: #DEB146;
 }
 
-/* red */
+/* red C64F3A */
 .rst-content .danger {
-    background: #E9E2F0;
+    background: #F7E4E2;
 }
 .rst-content .danger .admonition-title {
-    background-color: #A250F0;
+	font-family: HPE Graphik Medium;
+	font-weight: normal;
+    background-color: #C64F3A;
 }
 .rst-content .error {
-    background: #E9E2F0;
+    background: #F7E4E2;
 }
 .rst-content .error .admonition-title {
-    background-color: #A250F0;
+	font-family: HPE Graphik Medium;
+	font-weight: normal;
+    background-color: #C64F3A;
 }
 
 /* tabbed code fences */
@@ -101,7 +257,7 @@
     position: relative;
     flex-wrap: wrap;
     width: 100%;
-    background-color: #eee;
+    background-color: #E6E8E9; /* HPE Cloud */
     margin-bottom: 25px;
 }
 
@@ -115,13 +271,14 @@
     padding: 0 4px;
     margin: 0 8px;
     cursor: pointer;
-    color: #2980b9;
+    color: #535C66; /* HPE Carbon */
     margin-top: 10px;
 }
 
 .md-fenced-code-tabs input:checked + label {
-    color: #333;
-    font-weight: bold;
+    	color: #292D3A;
+	font-family: HPE Graphik Medium;
+	font-weight: normal;
 }
 
 .md-fenced-code-tabs .code-tabpanel {
@@ -153,3 +310,32 @@
 .wy-table-responsive table td, .wy-table-responsive table th {
 	white-space: normal;
 }
+
+.rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td, .wy-table-backed, .wy-table-odd td, .wy-table-striped tr:nth-child(2n-1) td {
+	background-color: rgba(230, 232, 233, 75%);
+}
+
+.rst-content table.docutils:not(.field-list) tr:nth-child(2n) td, .wy-table-backed, .wy-table-even td, .wy-table-striped tr:nth-child(2n) td {
+	background-color: #F7F7F7;
+}
+
+.rst-content table.docutils thead th, .rst-content table.field-list thead th, .wy-table thead th {
+	font-family: HPE Graphik Medium;
+	font-weight: normal;
+	background-color: #292D3A;
+	color: #F7F7F7;
+}
+
+.rst-current-version a {
+	font-family: HPE Graphik Regular;
+}
+
+.icon-home {
+	font-family: HPE Graphik Bold;
+        font-weight: normal;
+        color: #fff;
+}
+a.icon.icon-home, a.icon.icon-home:visited, a.icon.icon-home:hover {
+	color: #fff;
+}
+
