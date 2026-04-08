@@ -62,7 +62,7 @@ GODEBUG=tlsrsakex=1 ./hpe-array-exporter --log.path=/var/log/hpe-array-exporter.
 
 # Using a Container Image
 
-A container image is hosted at `quay.io/hpestorage/array-exporter:v1.0.4`, with v1.0.4 replaced by the desired release version.
+A container image is hosted at `quay.io/hpestorage/array-exporter:v1.0.5`, with v1.0.5 replaced by the desired release version.
 
 When deploying the array exporter as a container, the configuration file must be mounted as a volume.
 
@@ -75,7 +75,7 @@ In this example, the configuration file at `/tmp/storage-system.yaml` is bound t
 ```markdown
 docker run -it --name hpe-array-exporter -p 9090:8080 \
      -v /tmp/storage-system.yaml:/etc/config/storage-system.yaml \
-     quay.io/hpestorage/array-exporter:v1.0.4 \
+     quay.io/hpestorage/array-exporter:v1.0.5 \
      --log.path /var/log/hpe-array-exporter.log \
      /etc/config/storage-system.yaml
 ```
