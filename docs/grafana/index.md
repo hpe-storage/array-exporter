@@ -1,10 +1,12 @@
-Example Grafana dashboards, provided as is, are hosted on [grafana.com](https://grafana.com/orgs/hpestorage/dashboards).
+# Grafana
+
+Example Grafana dashboards, provided as is, are hosted on [grafana.com](https://grafana.com/orgs/hpestorage/dashboards). Container orchestrator specific instructions to enable these dashboards are available below.
+
+[TOC]
 
 ## Red Hat Advanced Cluster Management
 
 [Red Hat Advanced Cluster Management](https://www.redhat.com/en/technologies/management/advanced-cluster-management) (ACM) includes an Observability component that provides multi-cluster monitoring with a built-in Grafana instance. Custom dashboards can be loaded into this Grafana instance via Kubernetes `ConfigMap` resources. The dashboards hosted on grafana.com require several modifications to work correctly in this environment.
-
-[TOC]
 
 ### Dashboard ConfigMap
 
