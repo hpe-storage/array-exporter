@@ -90,3 +90,47 @@ spec:
     It may be desirable for metrics from the exporter to include a label identifying the storage system from which they are collected.  In this example, the `targetLabels` configuration refers to an `array` label that must have been included in the Service object.
 
 A ServiceMonitor example can also be found in the [sample YAML files](https://github.com/hpe-storage/co-deployments/tree/master/yaml/array-exporter).
+
+## Red Hat OpenShift
+
+When running the exporter on Red Hat OpenShift, User Workload Monitoring can be used to scrape the exporter metrics. The exporter is a user-deployed application and its metrics are collected by the User Workload Monitoring Prometheus instance rather than the platform Prometheus instance.
+
+### Enabling User Workload Monitoring
+
+User Workload Monitoring is not enabled by default on OpenShift. It must be enabled by an administrator before a `ServiceMonitor` in a user namespace can be discovered.
+
+!!! important
+    User Workload Monitoring must be enabled on the OpenShift cluster for the exporter `ServiceMonitor` to be discovered. Refer to the [Red Hat OpenShift documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/latest/html/monitoring/configuring-user-workload-monitoring) for instructions on enabling User Workload Monitoring.
+
+### Using a ServiceMonitor
+
+On OpenShift, the User Workload Monitoring Prometheus instance automatically discovers `ServiceMonitor` resources in user namespaces. The `k8s-app` and `release` labels used in the upstream Kubernetes examples are not required.
+
+#### ServiceMonitor Example
+
+```yaml
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: hpe-array-exporter
+  namespace: hpe-storage
+spec:
+  endpoints:
+    - port: http-metrics
+      scheme: http
+      interval: 60s
+  selector:
+    matchLabels:
+      app: hpe-array-exporter
+  namespaceSelector:
+    matchNames:
+      - hpe-storage
+  # Corresponding labels on the Array Exporter service are added to
+  # the scraped metrics; customize as desired
+  targetLabels:
+    - array
+```
+
+!!! note
+    The `ServiceMonitor` is placed in the same namespace as the exporter (`hpe-storage`). OpenShift's User Workload Monitoring Prometheus discovers it automatically without additional label selectors.
