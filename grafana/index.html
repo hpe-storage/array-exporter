@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Hewlett Packard Enterprise" /><link rel="canonical" href="https://hpe-storage.github.io/array-exporter/grafana/index.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <meta property="og:title" content="HPE Storage Array Exporter for Prometheus"/>
+    <meta property="og:description" content="The HPE Storage Array Exporter for Prometheus provides observability for an HPE storage system via the Prometheus metric format."/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:url" content="https://hpe-storage.github.io/array-exporter"/>
+    <meta property="og:type" content="website"/>
+    
+    <title>Grafana Dashboards - HPE Storage Array Exporter for Prometheus</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/hpedev.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Grafana Dashboards";
+        var mkdocs_page_input_path = "grafana/index.md";
+        var mkdocs_page_url = "/array-exporter/grafana/index.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> HPE Storage Array Exporter for Prometheus
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">GET STARTED</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../releases/index.html">Releases</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../deployment/index.html">Deployment</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../metrics/index.html">Metrics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../integration/index.html">Prometheus Integration</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Grafana Dashboards</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#red_hat_advanced_cluster_management">Red Hat Advanced Cluster Management</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#dashboard_configmap">Dashboard ConfigMap</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#adapting_grafanacom_dashboards">Adapting Grafana.com Dashboards</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#metrics_allowlist">Metrics Allowlist</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">HPE ALLETRA STORAGE MP B10000</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../onboard/index.html">Onboard Exporter</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">COMMUNITY</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="https://developer.hpe.com">HPE Developer Community</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://developer.hpe.com/slack-signup/">Sign up to HPE Developer on Slack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://github.com/hpe-storage/array-exporter/issues/new?title=I have some feedback on the Array Exporter">Got feedback?</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">LEGAL</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../legal/eula/index.html">End User License Agreement</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../legal/notices/index.html">Notices</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../legal/support/index.html">Support</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">HPE Storage Array Exporter for Prometheus</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">GET STARTED</li>
+      <li class="breadcrumb-item active">Grafana Dashboards</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="grafana">Grafana<a class="headerlink" href="#grafana" title="Permanent link">&para;</a></h1>
+<p>Example Grafana dashboards, provided as is, are hosted on <a href="https://grafana.com/orgs/hpestorage/dashboards">grafana.com</a>. Container orchestrator specific instructions to enable these dashboards are available below.</p>
+<div class="toc">
+<ul>
+<li><a href="#grafana">Grafana</a><ul>
+<li><a href="#red_hat_advanced_cluster_management">Red Hat Advanced Cluster Management</a><ul>
+<li><a href="#dashboard_configmap">Dashboard ConfigMap</a></li>
+<li><a href="#adapting_grafanacom_dashboards">Adapting Grafana.com Dashboards</a></li>
+<li><a href="#metrics_allowlist">Metrics Allowlist</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="red_hat_advanced_cluster_management">Red Hat Advanced Cluster Management<a class="headerlink" href="#red_hat_advanced_cluster_management" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.redhat.com/en/technologies/management/advanced-cluster-management">Red Hat Advanced Cluster Management</a> (ACM) includes an Observability component that provides multi-cluster monitoring with a built-in Grafana instance. Custom dashboards can be loaded into this Grafana instance via Kubernetes <code>ConfigMap</code> resources. The dashboards hosted on grafana.com require several modifications to work correctly in this environment.</p>
+<h3 id="dashboard_configmap">Dashboard ConfigMap<a class="headerlink" href="#dashboard_configmap" title="Permanent link">&para;</a></h3>
+<p>ACM Grafana discovers custom dashboards from <code>ConfigMap</code> resources in the <code>open-cluster-management-observability</code> namespace that carry the <code>grafana-custom-dashboard: "true"</code> label. The dashboard JSON is stored as a data key ending in <code>.json</code>.</p>
+<p> <pre><code class=yaml>---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hpe-array-exporter-dashboard
+  namespace: open-cluster-management-observability
+  labels:
+    cluster.open-cluster-management.io/backup: &quot;&quot;
+    grafana-custom-dashboard: &quot;true&quot;
+data:
+  hpe-exporter-dashboard.json: |
+    {
+      # Dashboard JSON content goes here
+    }
+</code></pre></p>
+<h3 id="adapting_grafanacom_dashboards">Adapting Grafana.com Dashboards<a class="headerlink" href="#adapting_grafanacom_dashboards" title="Permanent link">&para;</a></h3>
+<p>Dashboards exported from grafana.com include sections and settings that are not compatible with ACM Grafana. The following modifications are required when wrapping a grafana.com dashboard export into a <code>ConfigMap</code>.</p>
+<p><strong>Remove export-only sections.</strong> The <code>__inputs</code> and <code>__requires</code> sections at the top of the dashboard JSON are used during manual Grafana UI imports and serve no purpose in a <code>ConfigMap</code>-based deployment. These sections should be removed entirely.</p>
+<p><strong>Fix datasource references.</strong> Grafana.com exports reference a datasource variable such as <code>${DS_PROMETHEUS}</code> that relies on the <code>__inputs</code> substitution mechanism. This substitution does not occur when the dashboard is loaded via a <code>ConfigMap</code>. All datasource references must be replaced with an explicit object reference.</p>
+<p>Replace any occurrence of <code>"datasource": null</code> or <code>"datasource": "${DS_PROMETHEUS}"</code> with:</p>
+<p> <pre><code class=json>&quot;datasource&quot;: {&quot;type&quot;: &quot;prometheus&quot;, &quot;uid&quot;: &quot;default&quot;}
+</code></pre></p>
+<p><strong>Update annotation datasource.</strong> The annotation datasource <code>"datasource": "-- Grafana --"</code> is a deprecated string format. Replace it with the object format:</p>
+<p> <pre><code class=json>&quot;datasource&quot;: {&quot;type&quot;: &quot;datasource&quot;, &quot;uid&quot;: &quot;grafana&quot;}
+</code></pre></p>
+<p><strong>Update schema version.</strong> Grafana.com exports may use an older <code>schemaVersion</code>. Update the value to match the version supported by the ACM Grafana instance (e.g. <code>39</code>).</p>
+<p><strong>Remove stale fields.</strong> Fields such as <code>gnetId</code>, <code>iteration</code>, and <code>"style": "dark"</code> are grafana.com export artifacts and can be removed.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The dashboard metric names must match the platform-specific prefix used by the exporter. The exporter uses prefixes such as <code>hpealletrastoragemp_</code>, <code>hpealletra9000_</code>, <code>hpeprimera_</code>, <code>hpe3par_</code>, <code>hpealletra6000_</code>, and <code>hpenimble_</code> rather than a generic <code>hpe_</code> prefix. All PromQL expressions in the dashboard must be updated to use the correct prefix for the target storage platform. Refer to the <a href="../metrics/index.html">Metrics</a> page for the full list of metric names per platform.</p>
+</div>
+<h3 id="metrics_allowlist">Metrics Allowlist<a class="headerlink" href="#metrics_allowlist" title="Permanent link">&para;</a></h3>
+<p>ACM Observability collects metrics from managed clusters and forwards them to the hub cluster. Only metrics included in a custom allowlist <code>ConfigMap</code> are collected. The exporter runs as a user workload, so its metrics must be added to the <code>uwl_metrics_list.yaml</code> section of the allowlist rather than the <code>metrics_list.yaml</code> section.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The <code>metrics_list.yaml</code> section is for metrics scraped by the platform Prometheus instance (in the <code>openshift-monitoring</code> namespace). The <code>uwl_metrics_list.yaml</code> section is for metrics scraped by the User Workload Monitoring Prometheus instance. The exporter is a user workload and its metrics are scraped by the latter. Placing entries in the wrong section results in no data being collected.</p>
+</div>
+<p>The following example adds a match rule for HPE Alletra Storage MP B10000 metrics to the allowlist <code>ConfigMap</code> on the hub cluster.</p>
+<p> <pre><code class=yaml>---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: observability-metrics-custom-allowlist
+  namespace: open-cluster-management-observability
+data:
+  uwl_metrics_list.yaml: |
+    matches:
+    - __name__=~&quot;hpealletrastoragemp_.*&quot;
+</code></pre></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The match pattern must correspond to the metric prefix used by the exporter for the target storage platform. Refer to the <a href="../metrics/index.html">Metrics</a> page for the metric names and prefixes per platform.</p>
+</div>
+              
+            </div>
+          </div>
+
+<footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../onboard/index.html" class="btn btn-neutral float-right" title="Onboard Exporter">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../integration/index.html" class="btn btn-neutral" title="Prometheus Integration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright 2022-2026 Hewlett Packard Enterprise Development LP</p>
+    
+  </div>
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/hpe-storage/array-exporter" class="fa fa-code-fork" style="color: #fcfcfc"> hpe-storage/array-exporter</a>
+        </span>
+    
+    
+      <span><a href="../integration/index.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../onboard/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

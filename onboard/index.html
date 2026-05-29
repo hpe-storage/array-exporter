@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Hewlett Packard Enterprise" /><link rel="canonical" href="https://hpe-storage.github.io/array-exporter/onboard/index.html" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <meta property="og:title" content="HPE Storage Array Exporter for Prometheus"/>
+    <meta property="og:description" content="The HPE Storage Array Exporter for Prometheus provides observability for an HPE storage system via the Prometheus metric format."/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:url" content="https://hpe-storage.github.io/array-exporter"/>
+    <meta property="og:type" content="website"/>
+    
+    <title>Onboard Exporter - HPE Storage Array Exporter for Prometheus</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/hpedev.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Onboard Exporter";
+        var mkdocs_page_input_path = "onboard/index.md";
+        var mkdocs_page_url = "/array-exporter/onboard/index.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> HPE Storage Array Exporter for Prometheus
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">GET STARTED</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../releases/index.html">Releases</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../deployment/index.html">Deployment</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../metrics/index.html">Metrics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../integration/index.html">Prometheus Integration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../grafana/index.html">Grafana Dashboards</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">HPE ALLETRA STORAGE MP B10000</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Onboard Exporter</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#example_prometheus_scrape_configuration">Example Prometheus Scrape Configuration</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#metrics">Metrics</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#disk">Disk</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#port">Port</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#qos">QoS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vluns">VLUNs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#volumes">Volumes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#limitations">Limitations</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">COMMUNITY</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="https://developer.hpe.com">HPE Developer Community</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://developer.hpe.com/slack-signup/">Sign up to HPE Developer on Slack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://github.com/hpe-storage/array-exporter/issues/new?title=I have some feedback on the Array Exporter">Got feedback?</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">LEGAL</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../legal/eula/index.html">End User License Agreement</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../legal/notices/index.html">Notices</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../legal/support/index.html">Support</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">HPE Storage Array Exporter for Prometheus</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">HPE ALLETRA STORAGE MP B10000</li>
+      <li class="breadcrumb-item active">Onboard Exporter</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h1>
+<p>The HPE Alletra Storage MP B10000 onboard exporter can be enabled by a storage administrator in the array UI. Learn how at the <a href="https://support.hpe.com/hpesc/public/docDisplay?docId=sd00004645en_us&amp;page=GUID-6F1E4554-D279-4688-AC5F-5A424197AF16.html&amp;docLocale=en_US">HPE Support Center</a>.</p>
+<div class="toc">
+<ul>
+<li><a href="#overview">Overview</a><ul>
+<li><a href="#example_prometheus_scrape_configuration">Example Prometheus Scrape Configuration</a></li>
+<li><a href="#metrics">Metrics</a><ul>
+<li><a href="#disk">Disk</a></li>
+<li><a href="#port">Port</a></li>
+<li><a href="#qos">QoS</a></li>
+<li><a href="#vluns">VLUNs</a></li>
+<li><a href="#volumes">Volumes</a></li>
+</ul>
+</li>
+<li><a href="#limitations">Limitations</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="example_prometheus_scrape_configuration">Example Prometheus Scrape Configuration<a class="headerlink" href="#example_prometheus_scrape_configuration" title="Permanent link">&para;</a></h2>
+<p>The onboard exporter requires a username and password to be scraped. Credentials are sent over SSL using basic HTTP authentication. Below is an example scrape configuration for Prometheus.</p>
+<p> <pre><code class>...
+- job_name: my-array-0
+  metrics_path: /metrics
+  scrape_interval: 30s
+  static_configs:
+    - targets: ['192.168.1.100:443']
+  basic_auth:
+    username: user
+    password: prometheus
+  scheme: https
+  tls_config:
+    insecure_skip_verify: true
+...
+</code></pre></p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The <code>scrape_interval</code> may not be lower than 30 seconds. See <a href="#limitations">limitations</a>.</p>
+</div>
+<h2 id="metrics">Metrics<a class="headerlink" href="#metrics" title="Permanent link">&para;</a></h2>
+<p>These are the metrics reported by the onboard exporter up to release 10.5.</p>
+<h3 id="disk">Disk<a class="headerlink" href="#disk" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_disk_read_bytes_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Read throughput in bytes per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_disk_read_latency_seconds</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Read service time in seconds</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_disk_reads_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Read operations per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_disk_write_bytes_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Write throughput in bytes per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_disk_write_latency_seconds</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Write service time in seconds</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_disk_writes_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Write operations per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_disk_total_bytes_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Total throughput in bytes per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_disk_total_operations_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Total operations per second</td>
+</tr>
+</tbody>
+</table>
+<p>Each of these metrics includes the following labels.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">array</td>
+<td style="text-align: left;">Array name</td>
+</tr>
+<tr>
+<td style="text-align: left;">location</td>
+<td style="text-align: left;">Disk location (N:S:P)</td>
+</tr>
+<tr>
+<td style="text-align: left;">node</td>
+<td style="text-align: left;">Node number</td>
+</tr>
+<tr>
+<td style="text-align: left;">slot</td>
+<td style="text-align: left;">Slot number</td>
+</tr>
+<tr>
+<td style="text-align: left;">port</td>
+<td style="text-align: left;">Port number</td>
+</tr>
+</tbody>
+</table>
+<h3 id="port">Port<a class="headerlink" href="#port" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_port_read_bytes_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Read throughput in bytes per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_port_read_latency_seconds</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Read service time in seconds</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_port_reads_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Read operations per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_port_write_bytes_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Write throughput in bytes per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_port_write_latency_seconds</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Write service time in seconds</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_port_writes_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Write operations per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_port_total_bytes_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Total throughput in bytes per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_port_total_operations_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Total operations per second</td>
+</tr>
+</tbody>
+</table>
+<p>Each of these metrics includes the following labels.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">array</td>
+<td style="text-align: left;">Array name</td>
+</tr>
+<tr>
+<td style="text-align: left;">location</td>
+<td style="text-align: left;">HBA location (N:S:P)</td>
+</tr>
+<tr>
+<td style="text-align: left;">node</td>
+<td style="text-align: left;">Node number</td>
+</tr>
+<tr>
+<td style="text-align: left;">slot</td>
+<td style="text-align: left;">Slot number</td>
+</tr>
+<tr>
+<td style="text-align: left;">port</td>
+<td style="text-align: left;">Port number</td>
+</tr>
+</tbody>
+</table>
+<h3 id="qos">QoS<a class="headerlink" href="#qos" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_qos_read_bytes_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Read throughput in bytes per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_qos_read_latency_seconds</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Read service time in seconds</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_qos_reads_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Read operations per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_qos_write_bytes_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Write throughput in bytes per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_qos_write_latency_seconds</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Write service time in seconds</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_qos_writes_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Write operations per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_qos_total_bytes_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Total throughput in bytes per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_qos_total_operations_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Total operations per second</td>
+</tr>
+</tbody>
+</table>
+<p>Each of these metrics includes the following labels.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">array</td>
+<td style="text-align: left;">Array name</td>
+</tr>
+<tr>
+<td style="text-align: left;">qos</td>
+<td style="text-align: left;">QoS ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="vluns">VLUNs<a class="headerlink" href="#vluns" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_vlun_read_bytes_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Read throughput in bytes per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_vlun_read_latency_seconds</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Read service time in seconds</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_vlun_reads_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Read operations per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_vlun_write_bytes_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Write throughput in bytes per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_vlun_write_latency_seconds</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Write service time in seconds</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_vlun_writes_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Write operations per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_vlun_total_bytes_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Total throughput in bytes per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_vlun_total_operations_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Total operations per second</td>
+</tr>
+</tbody>
+</table>
+<p>Each of these metrics includes the following label.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">array</td>
+<td style="text-align: left;">Array name</td>
+</tr>
+<tr>
+<td style="text-align: left;">host</td>
+<td style="text-align: left;">Host name or IP address</td>
+</tr>
+<tr>
+<td style="text-align: left;">hostwwn</td>
+<td style="text-align: left;">Host WWN name</td>
+</tr>
+<tr>
+<td style="text-align: left;">volume</td>
+<td style="text-align: left;">Volume name</td>
+</tr>
+<tr>
+<td style="text-align: left;">location</td>
+<td style="text-align: left;">HBA location (N:S:P)</td>
+</tr>
+<tr>
+<td style="text-align: left;">node</td>
+<td style="text-align: left;">Node number</td>
+</tr>
+<tr>
+<td style="text-align: left;">slot</td>
+<td style="text-align: left;">Slot number</td>
+</tr>
+<tr>
+<td style="text-align: left;">port</td>
+<td style="text-align: left;">Port number</td>
+</tr>
+</tbody>
+</table>
+<h3 id="volumes">Volumes<a class="headerlink" href="#volumes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_volume_read_bytes_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Read throughput in bytes per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_volume_read_latency_seconds</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Read service time in seconds</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_volume_reads_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Read operations per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_volume_write_bytes_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Write throughput in bytes per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_volume_write_latency_seconds</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Write service time in seconds</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_volume_writes_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Write operations per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_volume_total_bytes_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Total throughput in bytes per second</td>
+</tr>
+<tr>
+<td style="text-align: left;">hpe_greenlake_for_block_storage_volume_total_operations_per_second</td>
+<td style="text-align: left;">gauge</td>
+<td style="text-align: left;">Total operations per second</td>
+</tr>
+</tbody>
+</table>
+<p>Each of these metrics includes the following labels.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">array</td>
+<td style="text-align: left;">Array name</td>
+</tr>
+<tr>
+<td style="text-align: left;">volume</td>
+<td style="text-align: left;">Volume name</td>
+</tr>
+</tbody>
+</table>
+<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
+<p>The onboard exporter up to 10.5 comes with these current known limitations.</p>
+<ul>
+<li>The onboard exporter runs on a throttled thread what only allows being scraped every 30 seconds. Any scrape attempt outside the allotted window will return an HTTP error.</li>
+<li>The onboard exporter does not provide any capacity metrics.</li>
+</ul>
+              
+            </div>
+          </div>
+
+<footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../legal/eula/index.html" class="btn btn-neutral float-right" title="End User License Agreement">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../grafana/index.html" class="btn btn-neutral" title="Grafana Dashboards"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright 2022-2026 Hewlett Packard Enterprise Development LP</p>
+    
+  </div>
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/hpe-storage/array-exporter" class="fa fa-code-fork" style="color: #fcfcfc"> hpe-storage/array-exporter</a>
+        </span>
+    
+    
+      <span><a href="../grafana/index.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../legal/eula/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
